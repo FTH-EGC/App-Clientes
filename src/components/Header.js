@@ -1,5 +1,6 @@
 import React from 'react'
 import Diente from '../assets/img/Diente.svg';
+import styled from '@emotion/styled';
 
 const Header = () => {
     return ( 

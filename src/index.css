@@ -11,3 +11,13 @@ body{
   background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
 }
+.contenedor{
+  max-width: 90%;
+  margin: 0 auto;
+}
+@media (min-width: 768px){
+    .contenedor{
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+}
