@@ -19,7 +19,14 @@ const Form = styled.form`
     }
 `;
 
+const Inputs = styled.input`
 
+    max-width: 100%;
+    border: none;
+    border-bottom: 2px solid #000000;
+    height: 3rem;
+
+`;
 
 
 const Formulario = () => {
@@ -32,32 +39,32 @@ const Formulario = () => {
         >
             <h2>CREAR UNA CITA</h2>
             <label htmlFor="nombre">Nombre</label>
-            <input
+            <Inputs
                 type="text"
                 name="nombre"
                 placeholder="Tu Nombre"
 
             />
             <label htmlFor="edad">Edad</label>
-            <input
+            <Inputs
                 type="text"
                 name="edad"
                 placeholder="Tu Edad"
             />
             <label htmlFor="telefono">Teléfono</label>
-            <input
+            <Inputs
                 type="tel"
                 name="telefono"
                 placeholder="Tu Teléfono"
                 
             />
             <label htmlFor="fecha">Fecha</label>
-            <input
+            <Inputs
                 type="date"
                 name="fecha"
             />
             <label htmlFor="hora">Hora</label>
-            <input
+            <Inputs
                 type="time"
                 name="hora"           
             />
