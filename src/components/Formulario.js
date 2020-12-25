@@ -82,6 +82,8 @@ const Formulario = () => {
         sintomas: ''
     });
 
+    const [error, guardarError] = useState(false);
+
     const {nombre, edad, telefono, fecha, hora, sintomas} = paciente;
 
 
@@ -96,8 +98,10 @@ const Formulario = () => {
         e.preventDefault();
 
         if(nombre.trim() === "" || edad.trim() === "" || telefono.trim() === "" || fecha.trim() === "" || hora.trim() === "" || sintomas.trim() === ""){
-            
-        }
+            guardarError(true);
+            return;
+        }   
+        guardarError(false);
     }
 
 
