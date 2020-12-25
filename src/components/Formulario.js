@@ -18,6 +18,7 @@ const Form = styled.form`
         text-align: center;
 
     }
+    
 `;
 
 const Inputs = styled.input`
@@ -25,7 +26,6 @@ const Inputs = styled.input`
     border: none;
     border-bottom: 1px solid #8b8b8b;
     height: 3rem;
-
     &:focus{
         border-bottom: 1px solid #541dd6;
         outline: none;
@@ -45,6 +45,14 @@ const TextArea = styled.textarea`
     height: 7rem;
     margin-bottom: 2rem;
     border-radius: 10px;
+    padding: 1rem;
+    &:focus{
+        outline: none;
+        -webkit-box-shadow: 0px 11px 17px -7px rgba(0,0,0,0.56);
+        -webkit-box-shadow: 0px 11px 17px -10px rgba(0,0,0,0.56);
+        -moz-box-shadow: 0px 11px 17px -10px rgba(0,0,0,0.56);
+        box-shadow: 0px 11px 17px -10px rgba(0,0,0,0.56);
+    }
 `;
 
 const Boton = styled.input`
