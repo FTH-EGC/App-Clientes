@@ -14,6 +14,7 @@ function App() {
           <div className="contenido">
               <Formulario 
                 guardarPacientes={guardarPacientes}
+                pacientes={pacientes}
               />
           </div>
         </div>
