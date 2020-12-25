@@ -8,6 +8,11 @@ const Form = styled.form`
     padding: 2rem 1rem;
     border-radius: 20px;
     color: #5E5E5E;
+    margin-top: 3rem;
+
+    @media (min-width: 768px){
+        margin-top: 6rem;
+    }
 
     h2{
         text-align: center;
