@@ -40,6 +40,12 @@ const Labels = styled.label`
     font-size: 1.2rem;
 `;
 
+const TextArea = styled.textarea`
+    height: 7rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+`;
+
 
 const Formulario = () => {
 
@@ -77,10 +83,10 @@ const Formulario = () => {
                 type="time"
                 name="hora"           
             />
-            <Labels htmlFor="sintomas">Sintomas</Labels>
-            <textarea 
+            <Labels htmlFor="sintomas">Síntomas</Labels>
+            <TextArea 
             name="sintomas"
-            ></textarea>
+            ></TextArea>
 
             <input 
                 type="submit"
