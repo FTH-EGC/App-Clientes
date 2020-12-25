@@ -27,9 +27,9 @@ const Citas = ({pacientes}) => {
     return ( 
 
         <Fragment >
-            <TituloH2>CITAS</TituloH2>
 
-            <DivCitas className="contenedor-citas">
+            <DivCitas>
+            <TituloH2>CITAS</TituloH2>
                 {pacientes.map(paciente => (
                     <Cita 
                     paciente={paciente} 
