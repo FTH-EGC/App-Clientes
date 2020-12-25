@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styled from '@emotion/styled';
 import Error from './Error';
+import shortid from 'shortid';
 
 const Form = styled.form`
     display: flex;
@@ -86,7 +87,8 @@ const Formulario = ({pacientes,guardarPacientes}) => {
     const onChangePaciente = e => {
         guardarPaciente({
             ...paciente,
-            [e.target.name] : e.target.value
+            [e.target.name] : e.target.value,
+            id: shortid()
         })
     }
 
