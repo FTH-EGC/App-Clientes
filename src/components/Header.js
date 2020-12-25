@@ -9,20 +9,25 @@ const SiteHeader = styled.header`
     color: #ffffff;
     text-transform: uppercase;
     font-size: 1rem;
-    font-weight: 900;
     margin-top: 4rem;
+    text-align: center;
 
     @media (min-width: 768px){
         font-size: 1.2rem;
         grid-template-rows: unset;
         grid-template-columns: repeat(2,max-content);
         align-items: center;
+        column-gap: 2rem;
     }
 
-    img{
+`;
+
+const Imagen = styled.img`
         max-width: 100%;
-        height: 5rem;
-    }
+        height: 7rem;
+        @media (min-width: 768px){
+            height: 10rem;
+        }
 `;
 
 
@@ -31,7 +36,9 @@ const Header = () => {
     return ( 
         <div className="header">
             <SiteHeader className="contenedor">
-                <img src={Diente} alt="Logo"/>
+                <div className="imagen">
+                    <Imagen src={Diente} alt="Logo"/>
+                </div>
                 <h1>Administrador de Citas</h1>
             </SiteHeader>
         </div>
