@@ -1,6 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
+import Citas from './components/Citas';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
                 guardarPacientes={guardarPacientes}
                 pacientes={pacientes}
               />
+              <Citas />
           </div>
         </div>
 
