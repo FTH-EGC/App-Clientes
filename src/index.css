@@ -31,3 +31,14 @@ body{
   display: flex;
   justify-content: center;
 }
+.contenido{
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  row-gap: 1rem;
+}
+@media (min-width: 768px){
+    .contenido{
+      grid-template-columns: repeat(2, max-content);
+      column-gap: 3rem;
+    }
+}
