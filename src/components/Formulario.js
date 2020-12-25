@@ -10,6 +10,7 @@ const Form = styled.form`
     padding: 2rem;
     border-radius: 20px;
     color: #5E5E5E;
+    max-height: 53rem;
 
     h2{
         text-align: center;
