@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from '@emotion/styled';
 
 const Form = styled.form`
@@ -64,6 +64,15 @@ const Boton = styled.input`
 
 const Formulario = () => {
 
+
+    const [paciente, guardarPaciente] = useState({
+        nombre: '',
+        edad: '',
+        telefono: '',
+        fecha: '',
+        hora: '',
+        sintomas: ''
+    });
 
 
     return ( 
