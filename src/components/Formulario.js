@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styled from '@emotion/styled';
+import Error from './Error';
 
 const Form = styled.form`
     display: flex;
@@ -109,6 +110,8 @@ const Formulario = () => {
         <Form 
             onSubmit={onSubmit}
         >
+            {error ? <Error /> : null}
+
             <h2>CREAR UNA CITA</h2>
             <Labels htmlFor="nombre">Nombre</Labels>
             <Inputs
