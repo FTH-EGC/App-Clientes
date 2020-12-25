@@ -77,6 +77,14 @@ const Formulario = () => {
     const {nombre, edad, telefono, fecha, hora, sintomas} = paciente;
 
 
+    const onChangePaciente = e => {
+        guardarPaciente({
+            ...paciente,
+            [e.target.name] : e.target.value
+        })
+    }
+
+
     return ( 
         <Form 
         
@@ -87,35 +95,41 @@ const Formulario = () => {
                 type="text"
                 name="nombre"
                 value={nombre}
+                onChange={onChangePaciente}
             />
             <Labels htmlFor="edad">Edad</Labels>
             <Inputs
                 type="text"
                 name="edad"
                 value={edad}
+                onChange={onChangePaciente}
             />
             <Labels htmlFor="telefono">Teléfono</Labels>
             <Inputs
                 type="tel"
                 name="telefono"
                 value={telefono}
+                onChange={onChangePaciente}
             />
             <Labels htmlFor="fecha">Fecha</Labels>
             <Inputs
                 type="date"
                 name="fecha"
                 value={fecha}
+                onChange={onChangePaciente}
             />
             <Labels htmlFor="hora">Hora</Labels>
             <Inputs
                 type="time"
                 name="hora"
-                value={hora}           
+                value={hora}  
+                onChange={onChangePaciente}         
             />
             <Labels htmlFor="sintomas">Síntomas</Labels>
             <TextArea 
             name="sintomas"
             value={sintomas}
+            onChange={onChangePaciente}
             ></TextArea>
 
             <Boton 
