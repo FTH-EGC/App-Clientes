@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import styled from '@emotion/styled';
+import Cita from './Cita';
 
 
 const TituloH2 = styled.h2`
@@ -22,15 +23,16 @@ const DivCitas = styled.div`
 
 const Citas = ({pacientes}) => {
 
+
     return ( 
 
         <Fragment >
             <TituloH2>CITAS</TituloH2>
 
             <DivCitas className="contenedor-citas">
-                <div className="card-cita">
-
-                </div>
+                <Cita
+                    pacientes={pacientes}
+                />
             </DivCitas>
 
         </Fragment>
