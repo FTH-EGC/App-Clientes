@@ -74,6 +74,8 @@ const Formulario = () => {
         sintomas: ''
     });
 
+    const {nombre, edad, telefono, fecha, hora, sintomas} = paciente;
+
 
     return ( 
         <Form 
@@ -84,32 +86,36 @@ const Formulario = () => {
             <Inputs
                 type="text"
                 name="nombre"
-
+                value={nombre}
             />
             <Labels htmlFor="edad">Edad</Labels>
             <Inputs
                 type="text"
                 name="edad"
+                value={edad}
             />
             <Labels htmlFor="telefono">Teléfono</Labels>
             <Inputs
                 type="tel"
                 name="telefono"
-                
+                value={telefono}
             />
             <Labels htmlFor="fecha">Fecha</Labels>
             <Inputs
                 type="date"
                 name="fecha"
+                value={fecha}
             />
             <Labels htmlFor="hora">Hora</Labels>
             <Inputs
                 type="time"
-                name="hora"           
+                name="hora"
+                value={hora}           
             />
             <Labels htmlFor="sintomas">Síntomas</Labels>
             <TextArea 
             name="sintomas"
+            value={sintomas}
             ></TextArea>
 
             <Boton 
