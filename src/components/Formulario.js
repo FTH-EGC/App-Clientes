@@ -71,7 +71,7 @@ const Boton = styled.input`
 `;
 
 
-const Formulario = () => {
+const Formulario = ({guardarPacientes}) => {
 
 
     const [paciente, guardarPaciente] = useState({
@@ -103,6 +103,7 @@ const Formulario = () => {
             return;
         }   
         guardarError(false);
+        guardarPacientes(paciente);
     }
 
 

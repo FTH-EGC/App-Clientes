@@ -4,7 +4,7 @@ import Formulario from './components/Formulario';
 
 function App() {
 
-  const [pacientes, guardarPacientes] = [[]];
+  const [pacientes, guardarPacientes] = useState([]);
 
   return (
     <Fragment>
