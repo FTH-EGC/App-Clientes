@@ -2,8 +2,16 @@ import React from 'react'
 import styled from '@emotion/styled';
 
 const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    color: #5E5E5E;
 
-
+    h2{
+        text-align: center;
+    }
 `;
 
 
@@ -14,9 +22,10 @@ const Formulario = () => {
 
 
     return ( 
-        <form 
+        <Form 
         
         >
+            <h2>CREAR UNA CITA</h2>
             <label htmlFor="nombre">Nombre</label>
             <input
                 type="text"
@@ -57,7 +66,7 @@ const Formulario = () => {
                 value="Agregar Cita"
             />
 
-        </form>
+        </Form>
      );
 }
  
