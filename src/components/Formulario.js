@@ -5,7 +5,7 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-    padding: 2rem 1rem;
+    padding: 2rem;
     border-radius: 20px;
     color: #5E5E5E;
     margin-top: 3rem;
@@ -16,6 +16,7 @@ const Form = styled.form`
 
     h2{
         text-align: center;
+
     }
 `;
 
@@ -44,6 +45,20 @@ const TextArea = styled.textarea`
     height: 7rem;
     margin-bottom: 2rem;
     border-radius: 10px;
+`;
+
+const Boton = styled.input`
+    background-color: #CF3D95;
+    padding: .7rem;
+    display: block;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 900;
+    &:hover{
+        cursor: pointer;
+    }
+
 `;
 
 
@@ -88,9 +103,9 @@ const Formulario = () => {
             name="sintomas"
             ></TextArea>
 
-            <input 
-                type="submit"
-                value="Agregar Cita"
+            <Boton 
+            type="submit"
+            value="AGREGAR CITA"
             />
 
         </Form>
