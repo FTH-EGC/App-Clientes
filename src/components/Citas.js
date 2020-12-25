@@ -20,7 +20,7 @@ const DivCitas = styled.div`
 
 
 
-const Citas = () => {
+const Citas = ({pacientes}) => {
 
     return ( 
 
@@ -29,7 +29,7 @@ const Citas = () => {
 
             <DivCitas className="contenedor-citas">
                 <div className="card-cita">
-                    
+
                 </div>
             </DivCitas>
 

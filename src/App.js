@@ -17,7 +17,9 @@ function App() {
                 guardarPacientes={guardarPacientes}
                 pacientes={pacientes}
               />
-              <Citas />
+              <Citas 
+                pacientes={pacientes}
+              />
           </div>
         </div>
 
