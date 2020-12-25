@@ -52,6 +52,11 @@ const Formulario = () => {
             name="sintomas"
             ></textarea>
 
+            <input 
+                type="submit"
+                value="Agregar Cita"
+            />
+
         </form>
      );
 }
