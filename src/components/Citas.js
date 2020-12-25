@@ -30,9 +30,12 @@ const Citas = ({pacientes}) => {
             <TituloH2>CITAS</TituloH2>
 
             <DivCitas className="contenedor-citas">
-                <Cita
-                    pacientes={pacientes}
-                />
+                {pacientes.map(paciente => (
+                    <Cita 
+                    paciente={paciente} 
+                    />
+
+                ))}
             </DivCitas>
 
         </Fragment>
