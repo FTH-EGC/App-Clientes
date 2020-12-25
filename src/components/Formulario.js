@@ -92,10 +92,18 @@ const Formulario = () => {
         })
     }
 
+    const onSubmit = e => {
+        e.preventDefault();
+
+        if(nombre.trim() === "" || edad.trim() === "" || telefono.trim() === "" || fecha.trim() === "" || hora.trim() === "" || sintomas.trim() === ""){
+            
+        }
+    }
+
 
     return ( 
         <Form 
-        
+            onSubmit={onSubmit}
         >
             <h2>CREAR UNA CITA</h2>
             <Labels htmlFor="nombre">Nombre</Labels>
