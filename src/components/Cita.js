@@ -75,7 +75,10 @@ const Sintomas = styled.div`
 
 
 
-const Cita = ({paciente}) => {
+
+const Cita = ({paciente, eliminarCita}) => {
+
+
 
     const {nombre, edad, telefono, fecha, hora, sintomas, id} = paciente;
 
@@ -96,10 +99,11 @@ const Cita = ({paciente}) => {
                 </Sintomas>
                 <Botones>
                     <BotonEditar
-                        name="editar"
+
                     >Editar</BotonEditar>
 
                     <BotonEliminar
+                        onClick={() => eliminarCita(paciente.id)}
                     >Eliminar</BotonEliminar>
                 </Botones>
             </div>

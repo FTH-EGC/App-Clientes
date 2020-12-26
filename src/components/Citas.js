@@ -21,7 +21,7 @@ const DivCitas = styled.div`
 
 
 
-const Citas = ({pacientes}) => {
+const Citas = ({pacientes, eliminarCita}) => {
 
 
     return ( 
@@ -34,6 +34,7 @@ const Citas = ({pacientes}) => {
                     <Cita 
                     key={paciente.id}
                     paciente={paciente} 
+                    eliminarCita={eliminarCita}
                     />
 
                 ))}

@@ -7,6 +7,11 @@ function App() {
 
   const [pacientes, guardarPacientes] = useState([]);
 
+  const eliminarCita = id => {
+    const citasActulizadas = pacientes.filter(paciente => paciente.id !== id);
+    guardarPacientes(citasActulizadas);
+  }
+
   return (
     <Fragment>
 
@@ -19,6 +24,7 @@ function App() {
               />
               <Citas 
                 pacientes={pacientes}
+                eliminarCita={eliminarCita}
               />
           </div>
         </div>
