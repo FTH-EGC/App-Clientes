@@ -86,10 +86,12 @@ const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpacien
 
 
     const onChangePaciente = e => {
-        guardarPaciente({
-            ...paciente,
-            [e.target.name] : e.target.value,
-        })
+
+
+            guardarPaciente({
+                ...paciente,
+                [e.target.name] : e.target.value,
+            })   
     }
 
     const onSubmit = e => {
@@ -99,13 +101,24 @@ const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpacien
             guardarError(true);
             return;
         }   
-        guardarError(false);
-        guardarPacientes([
-            ...pacientes,
-                paciente
-        ]);
 
-        paciente.id = shortid();
+        const datosIguales = pacientes.some(paciente => paciente.id === idpaciente);
+
+        if(datosIguales && editar){
+            console.log('Editar paciente');
+            guardarEditar(false);
+
+        }else{
+            guardarPacientes([
+                ...pacientes,
+                    paciente
+            ]);
+    
+            paciente.id = shortid();
+
+        }
+
+        guardarError(false);
 
         guardarPaciente({
             nombre: '',
@@ -115,6 +128,7 @@ const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpacien
             hora: '',
             sintomas: ''  
         })
+
 
     }
 
@@ -148,7 +162,7 @@ const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpacien
 
 
     return ( 
-        <Form 
+        <Form
             onSubmit={onSubmit}
         >
             {error ? <Error /> : null}
@@ -196,11 +210,11 @@ const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpacien
             value={sintomas}
             onChange={onChangePaciente}
             ></TextArea>
-
             <Boton 
-            type="submit"
-            value={textoBoton}
+                type="submit"
+                value={textoBoton}
             />
+
 
 
         </Form>
