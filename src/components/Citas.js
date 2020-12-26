@@ -32,6 +32,7 @@ const Citas = ({pacientes}) => {
             <TituloH2>CITAS</TituloH2>
                 {pacientes.map(paciente => (
                     <Cita 
+                    key={paciente.id}
                     paciente={paciente} 
                     />
 
