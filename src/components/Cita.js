@@ -19,6 +19,7 @@ const CardCita = styled.div`
     p{
         font-size: 1.2rem;
         font-weight: 700;
+        margin: .8rem 0; 
     }
     span{
         font-weight: 400;
@@ -88,8 +89,8 @@ const Cita = ({paciente}) => {
             <div>
                 <p>Nombre: <span>{nombre}</span></p>
                 <p>Edad: <span>{edad}</span></p>
-                <p>Telefono: <span>{telefono}</span></p>
-                <p>Sintomas:</p>
+                <p>Teléfono: <span>{telefono}</span></p>
+                <p>Síntomas:</p>
                 <Sintomas>
                     <span>{sintomas}</span>
                 </Sintomas>
