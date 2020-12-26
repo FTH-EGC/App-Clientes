@@ -29,7 +29,9 @@ const Citas = ({pacientes, eliminarCita}) => {
         <Fragment >
 
             <DivCitas>
-            <TituloH2>CITAS</TituloH2>
+            {Object.keys(pacientes).length > 0 
+            ? <TituloH2>CITAS</TituloH2> 
+            : <TituloH2>NO HAY CITAS</TituloH2>}
                 {pacientes.map(paciente => (
                     <Cita 
                     key={paciente.id}
