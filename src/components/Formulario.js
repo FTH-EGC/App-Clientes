@@ -89,7 +89,6 @@ const Formulario = ({pacientes,guardarPacientes}) => {
         guardarPaciente({
             ...paciente,
             [e.target.name] : e.target.value,
-            id: shortid()
         })
     }
 
@@ -105,6 +104,18 @@ const Formulario = ({pacientes,guardarPacientes}) => {
             ...pacientes,
                 paciente
         ]);
+
+        paciente.id = shortid();
+
+        guardarPaciente({
+            nombre: '',
+            edad: '',
+            telefono: '',
+            fecha: '',
+            hora: '',
+            sintomas: ''  
+        })
+
     }
 
 
