@@ -102,10 +102,13 @@ const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpacien
             return;
         }   
 
-        const datosIguales = pacientes.some(paciente => paciente.id === idpaciente);
+        const datosIguales = pacientes.map(paciente => paciente.id === idpaciente);
 
         if(datosIguales && editar){
-            console.log('Editar paciente');
+            guardarPacientes([
+                ...pacientes,
+                paciente
+            ])
             guardarEditar(false);
 
         }else{
@@ -137,7 +140,7 @@ const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpacien
         if(editar){
 
             const datosEditar = pacientes.find(paciente => paciente.id === idpaciente);
-            const {nombre, edad, telefono, fecha, hora, sintomas} = datosEditar;
+            const {nombre, edad, telefono, fecha, hora, sintomas, id} = datosEditar;
             
             guardarPaciente({
                 nombre,
@@ -145,7 +148,8 @@ const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpacien
                 telefono,
                 fecha,
                 hora,
-                sintomas
+                sintomas,
+                id
             });
 
         }
