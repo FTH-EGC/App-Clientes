@@ -21,7 +21,7 @@ const DivCitas = styled.div`
 
 
 
-const Citas = ({pacientes, eliminarCita}) => {
+const Citas = ({pacientes, eliminarCita, guardarEditar, guardarIdPaciente}) => {
 
 
     return ( 
@@ -37,6 +37,8 @@ const Citas = ({pacientes, eliminarCita}) => {
                     key={paciente.id}
                     paciente={paciente} 
                     eliminarCita={eliminarCita}
+                    guardarEditar={guardarEditar}
+                    guardarIdPaciente={guardarIdPaciente}
                     />
 
                 ))}

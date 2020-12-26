@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from '@emotion/styled';
 import Error from './Error';
 import shortid from 'shortid';
@@ -68,7 +68,7 @@ const Boton = styled.input`
 `;
 
 
-const Formulario = ({pacientes,guardarPacientes}) => {
+const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpaciente}) => {
 
 
     const [paciente, guardarPaciente] = useState({
@@ -118,6 +118,34 @@ const Formulario = ({pacientes,guardarPacientes}) => {
 
     }
 
+    useEffect(() => {
+
+        if(editar){
+
+            const datosEditar = pacientes.find(paciente => paciente.id === idpaciente);
+            const {nombre, edad, telefono, fecha, hora, sintomas} = datosEditar;
+            
+            guardarPaciente({
+                nombre,
+                edad,
+                telefono,
+                fecha,
+                hora,
+                sintomas
+            });
+
+        }
+
+    }, [editar])
+
+    let textoBoton;
+    if(editar){
+        textoBoton = "EDITAR CITA";
+
+    }else{
+        textoBoton = "CREAR CITA";
+    }
+
 
     return ( 
         <Form 
@@ -131,6 +159,7 @@ const Formulario = ({pacientes,guardarPacientes}) => {
                 type="text"
                 name="nombre"
                 value={nombre}
+
                 onChange={onChangePaciente}
             />
             <Labels htmlFor="edad">Edad</Labels>
@@ -170,8 +199,9 @@ const Formulario = ({pacientes,guardarPacientes}) => {
 
             <Boton 
             type="submit"
-            value="AGREGAR CITA"
+            value={textoBoton}
             />
+
 
         </Form>
      );

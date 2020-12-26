@@ -76,13 +76,24 @@ const Sintomas = styled.div`
 
 
 
-const Cita = ({paciente, eliminarCita}) => {
+const Cita = ({paciente, eliminarCita, guardarEditar,guardarIdPaciente}) => {
 
 
 
-    const {nombre, edad, telefono, fecha, hora, sintomas, id} = paciente;
+
+    const {nombre, edad, telefono, fecha, hora, sintomas} = paciente;
+
+
+    const editarCitas = () => {
+
+        guardarIdPaciente(paciente.id);
+        guardarEditar(true);
+
+    }
 
     return ( 
+
+
 
         <CardCita>
             <DatosFecha>
@@ -99,7 +110,7 @@ const Cita = ({paciente, eliminarCita}) => {
                 </Sintomas>
                 <Botones>
                     <BotonEditar
-
+                        onClick={editarCitas}
                     >Editar</BotonEditar>
 
                     <BotonEliminar
