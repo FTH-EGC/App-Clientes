@@ -46,6 +46,9 @@ const BotonEditar = styled.button`
     border: none;
     padding: .5rem;
     border-radius: 5px;
+    &:hover{
+        cursor: pointer;
+    }
 
 `;
 
@@ -56,6 +59,9 @@ const BotonEliminar = styled.button`
     padding: .5rem;
     border-radius: 5px;
 
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 const Sintomas = styled.div`
@@ -63,8 +69,6 @@ const Sintomas = styled.div`
     border: 1px solid #707070;
     margin-bottom: 1rem;
     border-radius: 10px;
-
-
 
 `;
 
