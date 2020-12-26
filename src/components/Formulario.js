@@ -135,7 +135,7 @@ const Formulario = ({pacientes,guardarPacientes}) => {
             />
             <Labels htmlFor="edad">Edad</Labels>
             <Inputs
-                type="text"
+                type="number"
                 name="edad"
                 value={edad}
                 onChange={onChangePaciente}
