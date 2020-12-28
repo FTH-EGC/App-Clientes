@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/app-Clientes/static/css/main.d9c00932.chunk.css",
-    "main.js": "/app-Clientes/static/js/main.ff78013d.chunk.js",
-    "main.js.map": "/app-Clientes/static/js/main.ff78013d.chunk.js.map",
-    "runtime-main.js": "/app-Clientes/static/js/runtime-main.2a8bdf6c.js",
-    "runtime-main.js.map": "/app-Clientes/static/js/runtime-main.2a8bdf6c.js.map",
-    "static/js/2.74a1198e.chunk.js": "/app-Clientes/static/js/2.74a1198e.chunk.js",
-    "static/js/2.74a1198e.chunk.js.map": "/app-Clientes/static/js/2.74a1198e.chunk.js.map",
-    "static/js/3.4868ecc8.chunk.js": "/app-Clientes/static/js/3.4868ecc8.chunk.js",
-    "static/js/3.4868ecc8.chunk.js.map": "/app-Clientes/static/js/3.4868ecc8.chunk.js.map",
-    "index.html": "/app-Clientes/index.html",
-    "static/css/main.d9c00932.chunk.css.map": "/app-Clientes/static/css/main.d9c00932.chunk.css.map",
-    "static/js/2.74a1198e.chunk.js.LICENSE.txt": "/app-Clientes/static/js/2.74a1198e.chunk.js.LICENSE.txt",
-    "static/media/Diente.a7c106d1.svg": "/app-Clientes/static/media/Diente.a7c106d1.svg"
+    "main.css": "/App-Clientes/static/css/main.d9c00932.chunk.css",
+    "main.js": "/App-Clientes/static/js/main.ff78013d.chunk.js",
+    "main.js.map": "/App-Clientes/static/js/main.ff78013d.chunk.js.map",
+    "runtime-main.js": "/App-Clientes/static/js/runtime-main.bbb6a734.js",
+    "runtime-main.js.map": "/App-Clientes/static/js/runtime-main.bbb6a734.js.map",
+    "static/js/2.74a1198e.chunk.js": "/App-Clientes/static/js/2.74a1198e.chunk.js",
+    "static/js/2.74a1198e.chunk.js.map": "/App-Clientes/static/js/2.74a1198e.chunk.js.map",
+    "static/js/3.4868ecc8.chunk.js": "/App-Clientes/static/js/3.4868ecc8.chunk.js",
+    "static/js/3.4868ecc8.chunk.js.map": "/App-Clientes/static/js/3.4868ecc8.chunk.js.map",
+    "index.html": "/App-Clientes/index.html",
+    "static/css/main.d9c00932.chunk.css.map": "/App-Clientes/static/css/main.d9c00932.chunk.css.map",
+    "static/js/2.74a1198e.chunk.js.LICENSE.txt": "/App-Clientes/static/js/2.74a1198e.chunk.js.LICENSE.txt",
+    "static/media/Diente.a7c106d1.svg": "/App-Clientes/static/media/Diente.a7c106d1.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2a8bdf6c.js",
+    "static/js/runtime-main.bbb6a734.js",
     "static/js/2.74a1198e.chunk.js",
     "static/css/main.d9c00932.chunk.css",
     "static/js/main.ff78013d.chunk.js"
