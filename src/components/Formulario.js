@@ -61,6 +61,7 @@ const Boton = styled.input`
     color: #ffffff;
     font-size: 1.8rem;
     font-weight: 900;
+    text-transform: uppercase;
     &:hover{
         cursor: pointer;
     }
@@ -68,8 +69,7 @@ const Boton = styled.input`
 `;
 
 
-const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpaciente}) => {
-
+const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) => {
 
     const [paciente, guardarPaciente] = useState({
         nombre: '',
@@ -81,47 +81,53 @@ const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpacien
     });
 
     const [error, guardarError] = useState(false);
-
     const {nombre, edad, telefono, fecha, hora, sintomas} = paciente;
 
 
-    const onChangePaciente = e => {
-
-
+    useEffect(() => {
+        if(Object.keys(citas).length > 0 && editar){
+            const datosFiltrados = citas.find(cita => cita.id === idpaciente);
+    
+            const{nombre, edad, telefono, fecha, hora, sintomas} = datosFiltrados;
+    
             guardarPaciente({
-                ...paciente,
-                [e.target.name] : e.target.value,
-            })   
-    }
+                nombre, 
+                edad, 
+                telefono,
+                fecha,
+                hora,
+                sintomas
+            });
+        }
+    }, [editar]);
+
 
     const onSubmit = e => {
         e.preventDefault();
-
         if(nombre.trim() === "" || edad.trim() === "" || telefono.trim() === "" || fecha.trim() === "" || hora.trim() === "" || sintomas.trim() === ""){
             guardarError(true);
             return;
-        }   
-
-        const datosIguales = pacientes.map(paciente => paciente.id === idpaciente);
-
-        if(datosIguales && editar){
-            guardarPacientes([
-                ...pacientes,
-                paciente
-            ])
-            guardarEditar(false);
-
-        }else{
-            guardarPacientes([
-                ...pacientes,
-                    paciente
-            ]);
-    
-            paciente.id = shortid();
-
         }
 
         guardarError(false);
+
+        if(editar){
+
+            const datosIguales = citas.find(cita => cita.id === idpaciente); 
+            Object.assign(datosIguales, paciente);
+    
+            guardarEditar(false);
+        }else{
+        // Pasando el paciente a las citas (state principal)
+        guardarCitas([
+            ...citas,
+            paciente
+        ])  
+        // Generando un id
+        paciente.id = shortid.generate();
+        }
+
+        // Reseteando el formulario
 
         guardarPaciente({
             nombre: '',
@@ -129,90 +135,79 @@ const Formulario = ({pacientes,guardarPacientes, guardarEditar, editar, idpacien
             telefono: '',
             fecha: '',
             hora: '',
-            sintomas: ''  
+            sintomas: '' 
         })
-
 
     }
 
-    useEffect(() => {
+ 
 
-        if(editar){
 
-            const datosEditar = pacientes.find(paciente => paciente.id === idpaciente);
-            const {nombre, edad, telefono, fecha, hora, sintomas, id} = datosEditar;
-            
-            guardarPaciente({
-                nombre,
-                edad,
-                telefono,
-                fecha,
-                hora,
-                sintomas,
-                id
-            });
-
-        }
-
-    }, [editar])
+    const onChange = e => {
+        // Pasando datos al objeto de paciente
+        guardarPaciente({
+            ...paciente,
+            [e.target.name] : e.target.value
+        })
+    }
 
     let textoBoton;
     if(editar){
-        textoBoton = "EDITAR CITA";
-
+        textoBoton="Editar Registro";
     }else{
-        textoBoton = "CREAR CITA";
+        textoBoton="Crear Cita"
     }
 
 
     return ( 
         <Form
-            onSubmit={onSubmit}
+
+        onSubmit={onSubmit}
         >
             {error ? <Error /> : null}
-
             <h2>CREAR UNA CITA</h2>
             <Labels htmlFor="nombre">Nombre</Labels>
             <Inputs
                 type="text"
                 name="nombre"
                 value={nombre}
-
-                onChange={onChangePaciente}
+                onChange={onChange}
             />
             <Labels htmlFor="edad">Edad</Labels>
             <Inputs
                 type="number"
                 name="edad"
                 value={edad}
-                onChange={onChangePaciente}
+                onChange={onChange}
             />
             <Labels htmlFor="telefono">Teléfono</Labels>
             <Inputs
                 type="tel"
                 name="telefono"
                 value={telefono}
-                onChange={onChangePaciente}
+                onChange={onChange}
             />
             <Labels htmlFor="fecha">Fecha</Labels>
             <Inputs
                 type="date"
                 name="fecha"
                 value={fecha}
-                onChange={onChangePaciente}
+                onChange={onChange}
             />
             <Labels htmlFor="hora">Hora</Labels>
             <Inputs
                 type="time"
                 name="hora"
-                value={hora}  
-                onChange={onChangePaciente}         
+                value={hora}
+                onChange={onChange}
+     
             />
             <Labels htmlFor="sintomas">Síntomas</Labels>
             <TextArea 
             name="sintomas"
             value={sintomas}
-            onChange={onChangePaciente}
+            onChange={onChange}
+
             ></TextArea>
             <Boton 
                 type="submit"

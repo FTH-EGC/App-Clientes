@@ -7,6 +7,7 @@ const TituloH2 = styled.h2`
     text-align: center;
     color: #ffffff;
     font-size: 2.5rem;
+    text-transform: uppercase;
 
 `;
 
@@ -21,27 +22,31 @@ const DivCitas = styled.div`
 
 
 
-const Citas = ({pacientes, eliminarCita, guardarEditar, guardarIdPaciente}) => {
+const Citas = ({citas, eliminarCita, guardarEditar, guardarIdPaciente}) => {
 
 
     return ( 
 
         <Fragment >
-
             <DivCitas>
-            {Object.keys(pacientes).length > 0 
-            ? <TituloH2>CITAS</TituloH2> 
-            : <TituloH2>NO HAY CITAS</TituloH2>}
-                {pacientes.map(paciente => (
-                    <Cita 
-                    key={paciente.id}
-                    paciente={paciente} 
-                    eliminarCita={eliminarCita}
-                    guardarEditar={guardarEditar}
-                    guardarIdPaciente={guardarIdPaciente}
-                    />
+                {Object.keys(citas).length === 0 
 
+                ? 
+                <TituloH2>No hay citas</TituloH2>
+                :
+                <TituloH2>Citas</TituloH2>
+                }
+
+                {citas.map(cita => (
+                    <Cita
+                        key={cita.id}
+                        cita={cita}
+                        eliminarCita={eliminarCita}
+                        guardarEditar={guardarEditar}
+                        guardarIdPaciente={guardarIdPaciente}
+                    />
                 ))}
+
             </DivCitas>
 
         </Fragment>

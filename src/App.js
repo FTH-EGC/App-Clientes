@@ -5,32 +5,31 @@ import Citas from './components/Citas';
 
 function App() {
 
-  const [pacientes, guardarPacientes] = useState([]);
+  const [citas, guardarCitas] = useState([]);
   const [editar, guardarEditar] = useState(false);
   const [idpaciente, guardarIdPaciente] = useState('');
 
   const eliminarCita = id => {
-    const citasActulizadas = pacientes.filter(paciente => paciente.id !== id);
-    guardarPacientes(citasActulizadas);
-  }
-
+      const citaEliminada = citas.filter(cita => cita.id !== id);
+      guardarCitas(citaEliminada);
+  } 
 
 
   return (
     <Fragment>
-
         <Header />
         <div className="contenedor">
           <div className="contenido">
+            
               <Formulario 
-                guardarPacientes={guardarPacientes}
-                pacientes={pacientes}
+                guardarCitas={guardarCitas}
+                citas={citas}
+                editar={editar}
+                idpaciente={idpaciente}
                 guardarEditar={guardarEditar}
-                editar={editar}    
-                idpaciente={idpaciente}     
               />
               <Citas 
-                pacientes={pacientes}
+                citas={citas}
                 eliminarCita={eliminarCita}
                 guardarEditar={guardarEditar}
                 guardarIdPaciente={guardarIdPaciente}
