@@ -2,15 +2,20 @@ import React, {Fragment, useState, useEffect} from 'react';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 import Citas from './components/Citas';
+import Error from './components/Error';
 
 function App() {
 
 
+let citasIniciales = JSON.parse(localStorage.getItem('Citas'));
+if(!citasIniciales){
+  citasIniciales = [];
+}
 
-
-  const [citas, guardarCitas] = useState([]);
+  const [citas, guardarCitas] = useState(citasIniciales);
   const [editar, guardarEditar] = useState(false);
   const [idpaciente, guardarIdPaciente] = useState('');
+
 
   const eliminarCita = id => {
       const citaEliminada = citas.filter(cita => cita.id !== id);
@@ -21,7 +26,12 @@ function App() {
 
   useEffect(() => {
 
-    console.log('Documento iniciado o algo paso con las citas')
+    if(citasIniciales){
+      localStorage.setItem('Citas', JSON.stringify(citas));
+    }else{
+      localStorage.setItem('Citas', JSON.stringify([]))
+    }
+    
   }, [citas])
 
 
@@ -30,7 +40,6 @@ function App() {
         <Header />
         <div className="contenedor">
           <div className="contenido">
-            
               <Formulario 
                 guardarCitas={guardarCitas}
                 citas={citas}

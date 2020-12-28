@@ -79,6 +79,7 @@ const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) =>
         hora: '',
         sintomas: ''
     });
+    const [editado, guardarEditado] = useState(false);
 
     const [error, guardarError] = useState(false);
     const {nombre, edad, telefono, fecha, hora, sintomas} = paciente;
@@ -125,6 +126,10 @@ const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) =>
             });
             guardarCitas([...citasAct]);
             guardarEditar(false);
+            guardarEditado(true);
+            setTimeout(() => {
+                guardarEditado(false);
+            }, 3000);
         }else{
         // Pasando el paciente a las citas (state principal)
         guardarCitas([
@@ -175,7 +180,8 @@ const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) =>
 
         onSubmit={onSubmit}
         >
-            {error ? <Error /> : null}
+            {error ? <Error mensaje="Todos los campos son obligatorios" /> : null}
+            {editado ? <Error mensaje="Editado Correctamente" /> : null}
             <h2>CREAR UNA CITA</h2>
             <Labels htmlFor="nombre">Nombre</Labels>
             <Inputs

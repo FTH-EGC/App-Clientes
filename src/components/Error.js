@@ -10,9 +10,9 @@ const Parrafo = styled.p`
 `;
 
 
-const Error = () => {
+const Error = ({mensaje}) => {
     return ( 
-        <Parrafo>Todos los campos son obligatorios</Parrafo>
+        <Parrafo>{mensaje}</Parrafo>
      );
 }
  
