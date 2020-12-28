@@ -1,9 +1,12 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 import Citas from './components/Citas';
 
 function App() {
+
+
+
 
   const [citas, guardarCitas] = useState([]);
   const [editar, guardarEditar] = useState(false);
@@ -13,6 +16,13 @@ function App() {
       const citaEliminada = citas.filter(cita => cita.id !== id);
       guardarCitas(citaEliminada);
   } 
+
+
+
+  useEffect(() => {
+
+    console.log('Documento iniciado o algo paso con las citas')
+  }, [citas])
 
 
   return (

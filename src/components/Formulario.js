@@ -88,7 +88,7 @@ const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) =>
         if(Object.keys(citas).length > 0 && editar){
             const datosFiltrados = citas.find(cita => cita.id === idpaciente);
     
-            const{nombre, edad, telefono, fecha, hora, sintomas} = datosFiltrados;
+            const{nombre, edad, telefono, fecha, hora, sintomas, id} = datosFiltrados;
     
             guardarPaciente({
                 nombre, 
@@ -96,10 +96,11 @@ const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) =>
                 telefono,
                 fecha,
                 hora,
-                sintomas
+                sintomas,
+                id
             });
         }
-    }, [editar]);
+    }, [editar, citas]);
 
 
     const onSubmit = e => {
@@ -110,12 +111,19 @@ const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) =>
         }
 
         guardarError(false);
+        const datosIguales = citas.some(cita => cita.id === idpaciente); 
+        if(datosIguales && editar){
 
-        if(editar){
+            const citasAct = citas.map(cita => {
+                if(cita.id === idpaciente){
+                    const citasNuevas = {...paciente}
+                    return citasNuevas;
+                }else{
+                    return cita;
+                }
 
-            const datosIguales = citas.find(cita => cita.id === idpaciente); 
-            Object.assign(datosIguales, paciente);
-    
+            });
+            guardarCitas([...citasAct]);
             guardarEditar(false);
         }else{
         // Pasando el paciente a las citas (state principal)
@@ -125,7 +133,10 @@ const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) =>
         ])  
         // Generando un id
         paciente.id = shortid.generate();
+
+        console.log('No son iguales')
         }
+
 
         // Reseteando el formulario
 
