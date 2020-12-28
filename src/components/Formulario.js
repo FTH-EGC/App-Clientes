@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import styled from '@emotion/styled';
 import Error from './Error';
 import shortid from 'shortid';
+import PropTypes from 'prop-types';
 
 const Form = styled.form`
     display: flex;
@@ -101,7 +102,7 @@ const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) =>
                 id
             });
         }
-    }, [editar, citas]);
+    }, [editar, citas, idpaciente]);
 
 
     const onSubmit = e => {
@@ -139,7 +140,6 @@ const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) =>
         // Generando un id
         paciente.id = shortid.generate();
 
-        console.log('No son iguales')
         }
 
 
@@ -235,6 +235,15 @@ const Formulario = ({guardarCitas, citas, editar, idpaciente, guardarEditar}) =>
 
         </Form>
      );
+}
+
+
+Formulario.propTypes = {
+    guardarCitas: PropTypes.func.isRequired,
+    citas: PropTypes.array.isRequired,
+    editar: PropTypes.bool.isRequired,
+    guardarEditar: PropTypes.func.isRequired,
+    idpaciente: PropTypes.string.isRequired
 }
  
 export default Formulario;

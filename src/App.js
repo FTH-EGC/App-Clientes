@@ -2,7 +2,6 @@ import React, {Fragment, useState, useEffect} from 'react';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 import Citas from './components/Citas';
-import Error from './components/Error';
 
 function App() {
 
@@ -32,7 +31,7 @@ if(!citasIniciales){
       localStorage.setItem('Citas', JSON.stringify([]))
     }
     
-  }, [citas])
+  }, [citas, citasIniciales])
 
 
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 
 
@@ -111,6 +112,13 @@ const Cita = ({cita, eliminarCita, guardarEditar, guardarIdPaciente}) => {
             </div>
         </CardCita>
      );
+}
+
+Cita.propTypes = {
+    cita: PropTypes.object.isRequired,
+    eliminarCita: PropTypes.func.isRequired,
+    guardarEditar: PropTypes.func.isRequired,
+    guardarIdPaciente: PropTypes.func.isRequired
 }
  
 export default Cita;

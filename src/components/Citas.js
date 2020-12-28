@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import styled from '@emotion/styled';
 import Cita from './Cita';
-
+import PropTypes from 'prop-types';
 
 const TituloH2 = styled.h2`
     text-align: center;
@@ -51,6 +51,14 @@ const Citas = ({citas, eliminarCita, guardarEditar, guardarIdPaciente}) => {
 
         </Fragment>
      );
+}
+
+Citas.propTypes = {
+    citas: PropTypes.array.isRequired,
+    eliminarCita: PropTypes.func.isRequired,
+    guardarEditar: PropTypes.func.isRequired,
+    guardarIdPaciente: PropTypes.func.isRequired
+
 }
  
 export default Citas;
