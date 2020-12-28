@@ -2,7 +2,7 @@
   "name": "citas",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://FTH-EGC.github.io/app-Clientes",
+  "homepage": "http://FTH-EGC.github.io/App-Clientes",
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.0.0",
