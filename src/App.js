@@ -33,6 +33,11 @@ if(!citasIniciales){
     
   }, [citas, citasIniciales])
 
+  if(editar){
+    const contenido = document.querySelector('.contenido');
+    contenido.scrollIntoView({behavior: 'smooth'})
+
+  }
 
   return (
     <Fragment>

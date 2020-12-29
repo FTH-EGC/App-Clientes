@@ -35,7 +35,7 @@ const Imagen = styled.img`
 const Header = () => {
     return ( 
         <div className="header">
-            <SiteHeader className="contenedor">
+            <SiteHeader>
                 <div className="imagen">
                     <Imagen src={Diente} alt="Logo"/>
                 </div>

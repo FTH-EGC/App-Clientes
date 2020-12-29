@@ -9,7 +9,7 @@ const CardCita = styled.div`
     padding: 1rem;
     display: grid;
     grid-template-rows: repeat(2, auto);
-    width: 85%;
+    width: 95%;
     margin-bottom: 2rem;
     border-radius: 30px;
 
